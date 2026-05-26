@@ -1,16 +1,16 @@
-name: Sync S3 Bucket  
+name: Test Workflow
 
 on:
   push:
     branches:
-      - stage 
+      - main
+      - development
+  workflow_dispatch:
+
 jobs:
-  sync:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: print hello 
-        run: echo "Hello World successfully triggered on stage branch commit"
+      - name: Print message
+        run: echo "Workflow is working 🚀"
